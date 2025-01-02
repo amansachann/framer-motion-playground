@@ -1,8 +1,14 @@
 "use client";
-import React from "react";
+import React, { ReactNode } from "react";
 import { motion } from "framer-motion";
 
-const BasicAnimatedButton = () => {
+const BasicAnimatedButton = ({
+  children,
+  onClick,
+}: {
+  children: ReactNode;
+  onClick: () => void;
+}) => {
   return (
     <>
       <motion.button
@@ -11,6 +17,7 @@ const BasicAnimatedButton = () => {
         whileTap={{ scale: 0.9 }}
         onHoverStart={() => console.log("Mouse on Button 🧨")}
         onHoverEnd={() => console.log("Mouse away from button 🚀")}
+        onClick={onClick}
       >
         <span className="absolute bottom-0 right-0 w-8 h-20 -mb-8 -mr-5 transition-all duration-300 ease-out transform rotate-45 translate-x-1 bg-white opacity-10 group-hover:-translate-x-1"></span>
         <span className="absolute top-0 left-0 w-20 h-8 -mt-1 -ml-12 transition-all duration-300 ease-out transform -rotate-45 -translate-x-1 bg-white opacity-10 group-hover:translate-x-1"></span>
@@ -29,7 +36,7 @@ const BasicAnimatedButton = () => {
               d="M13 10V3L4 14h7v7l9-11h-7z"
             ></path>
           </svg>
-          Click Me
+          {children}
         </span>
       </motion.button>
     </>
