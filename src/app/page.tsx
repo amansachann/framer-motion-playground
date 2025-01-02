@@ -1,12 +1,10 @@
-import BasicAnimatedButton from "@/components/BasicAnimatedButton";
-import BasicFadeInAnimation from "@/components/BasicFadeInAnimation";
+import DraggableBox from "@/components/DraggableBox";
 
 export default function Home() {
   return (
     <>
       <div className="h-screen w-screen flex items-center justify-center flex-col gap-8">
-        <BasicFadeInAnimation />
-        <BasicAnimatedButton/>
+        <DraggableBox />
       </div>
     </>
   );
