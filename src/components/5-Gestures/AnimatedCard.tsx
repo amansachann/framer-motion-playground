@@ -21,7 +21,7 @@ const AnimatedCard = () => {
           bottom: 50,
         }}
         // dragElastic={0.2}
-        transition={{type:'spring'}}
+        transition={{ type: "spring" }}
       >
         <Image
           src={
