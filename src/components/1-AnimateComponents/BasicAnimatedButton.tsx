@@ -2,18 +2,24 @@
 import React, { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { BsFillLightningFill } from "react-icons/bs";
+import { twMerge } from "tailwind-merge";
 
 const BasicAnimatedButton = ({
   children,
   onClick,
+  className,
 }: {
   children: ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
+  className?: string;
 }) => {
   return (
     <>
       <motion.button
-        className="box-border relative z-30 inline-flex items-center justify-center w-auto px-8 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-indigo-600 rounded-md cursor-pointer group ease focus:outline-none"
+        className={twMerge(
+          "box-border relative z-30 inline-flex items-center justify-center w-auto px-8 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-indigo-600 rounded-md cursor-pointer group ease focus:outline-none",
+          className
+        )}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onHoverStart={() => console.log("Mouse on Button 🧨")}
