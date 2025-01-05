@@ -1,10 +1,10 @@
-import AnimatedShape from "@/components/5-Gestures/AnimatedShape";
+import InstaTyping from "@/components/OtherAnimations/InstaTyping";
 
 export default function Home() {
   return (
     <>
       <div className="h-screen w-screen flex items-center justify-center flex-col gap-8">
-        <AnimatedShape />
+        <InstaTyping />
       </div>
     </>
   );
